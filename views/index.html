@@ -23,8 +23,8 @@
                     <strong>Lista de cursos</strong>
                     </div>
                     <div class="col-md-6 text-end">
-                        <button class="btn btn-success btn-sm" id="abrir-moral" data-bs-toggle="modal" data-bs-target="#modal-registro-cursos"
-                        <i class="bi bi-plus-circle-fill"></i> Agregar curso</>
+                        <button class="btn btn-success btn-sm" id="abrir-modal" data-bs-toggle="modal" 
+                        data-bs-target="#modal-registro-cursos"><i class="bi bi-plus-circle"></i> Agregar curso</button>
                     </div>
                 </div>
             </div>
@@ -78,8 +78,7 @@
                                 <a href="#" class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></a>
                                 <a href="#" class="btn btn-info btn-sm"><i class="bi bi-pencil"></i></a>
                             </td>
-                        </tr>
-                        <!--Fin de datos de pruebas-->
+                        </tr> <!--Fin de datos de pruebas-->
                         
                     </tbody>
                 </table>
@@ -95,13 +94,14 @@
 
     <!-- Modal Body -->
     <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-    <div class="modal fade" id="modalId" tabindex="-1"  role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal fade" id="modal-registro-cursos" tabindex="-1"  role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-light">
                     <h5 class="modal-title" id="modalTitleId">Registro de cursos</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <!--NOMBRE DE CURSO-->
                 <div class="modal-body">
                     <form action="">
                         <div class="mb-3">
@@ -109,7 +109,7 @@
                             <input type="text" class="form-control form-control-sm" id="nombrecurso">
                         </div>
 
-                       
+                       <!--Especialidad-->
                          <div class="mb-3">
                             <label for="especialidad" class="form-label">Especialidad </label>
                             <select id="especialidad" class="form-select form-select-sm">
@@ -119,26 +119,29 @@
                                 <option value="Mecanica">Mecanica</option>
                             </select>
                         </div>
-
+                        <!--complejidad-->
                         <div class="mb-3">
-                            <label for="" class="form-label">Complejidad</label>
-                            <select id="especialidad" class="form-select form-select-sm">
+                            <label for="Complejidad" class="form-label">Complejidad</label>
+                            <select id="complejidad" class="form-select form-select-sm">
                                 <option value="">Seleccione</option>
                                 <option value="B">Basico</option>
                                 <option value="A">Medio</option>
                                 <option value="A">Avanzado</option>
                             </select>
                         </div>
-
+                        
+                        <!--fecha inicio-->
 
                         <div class="mb-3"> 
                             <label for="fechainicio" class="form-label">Fecha Inicio </label>
-                            <input type="date" class="form-select form-select-sm" id="fechainicio">
+                            <input type="date" class="form-control form-control-sm" id="fechainicio">
                         </div>
+
+                        <!--precio-->
                         
                         <div class="mb-3"> 
                             <label for="precio" class="form-label">Precio: </label>
-                            <input type="text" class="form-select form-select-sm" id="precio">
+                            <input type="text" class="form-control form-control-sm" id="precio">
                         </div>
                     </form>
 
