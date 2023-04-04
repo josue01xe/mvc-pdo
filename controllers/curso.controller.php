@@ -30,8 +30,8 @@ if($_POST['operacion']== 'listar'){
            <td>{$curso['precio']}</td>
            <td>
            
-           <a href='#' class='btn btn-danger btn-sm'><i class='bi bi-trash-fill'></i></a>
-           <a href='#' class='btn btn-info btn-sm'><i class='bi bi-pencil'></i></a>
+           <a href='#' data-idcurso='{$curso['idcurso']}' class='btn btn-danger btn-sm eliminar'><i class='bi bi-trash-fill'></i></a>
+           <a href='#' data-idcurso='{$curso['idcurso']}' class='btn btn-info btn-sm editar'><i class='bi bi-pencil'></i></a>
            </td>
            </tr>
           ";
@@ -57,6 +57,12 @@ if($_POST['operacion']== 'registrar'){
   //paso 2: enviar el arreglo como parametro del metodo registrar
   $curso->registrarCurso($datosForm);
 
- }
+ 
 
+}
+
+if ($_POST['operacion'] =='eliminar'){
+  $curso->eliminarCurso($_POST['idcurso']);
+  }
+  
 }

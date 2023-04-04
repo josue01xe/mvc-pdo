@@ -168,11 +168,39 @@
                                     }
                                 }
 
+                                function eliminarCurso() {
+                                    console.log("Eliminado...");
+                                }
                                 //Eventos
                                 $("#guardar-curso").click(registrarCurso);
 
+                                // al pulsar click sobre el boton rojo, se elimine el registro
+                                //detectaremos eventos de los objetos creados de manera asincrona en...
+                                $("#tabla-cursos tbody").on("click", ".eliminar", function() {
+                                    const idcurso = $(this).data("idcurso");
+                                    if (confirm("¿esta seguro de proceder?")) {
+                                        $.ajax({
+                                            url: '../controllers/curso.controller.php',
+                                            type: 'POST',
+                                            data: {
+                                                operacion: 'eliminar',
+                                                idcurso: idcursoEliminar
+                                            },
+                                            success: function(result) {
+                                                if (result == "") {
+                                                    mostrarCursos();
+                                                }
+
+                                            }
+
+                                        });
+                                    }
+
+                                });
+
                                 //Ejecución automática
                                 mostrarCursos();
+
 
                             });
                         </script>
