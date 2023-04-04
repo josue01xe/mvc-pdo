@@ -1,6 +1,6 @@
 <?php
 
-require_once "./Conexion.php";
+require_once "Conexion.php";
 
 //MODELO = CONTIENE LA LOGICA
 class Curso extends Conexion{
@@ -11,7 +11,7 @@ class Curso extends Conexion{
 
 //constructor
   public function __CONSTRUCT(){
-    $this->$accesoBD = parent::getConexion();
+    $this->accesoBD = parent::getConexion();
   }
 
   //metodo listar cursos
@@ -28,32 +28,24 @@ class Curso extends Conexion{
       die($e->getMessage());
     }
   }
+  
 
   public function registrarCurso(){
-    try{
+  
 
-    }
-    }catch(Exception $e){
-      die($e->getMessage());
-    }
+
   }
   public function eliminarCurso(){
-    try{
 
-}
-    catch(Exception $e){
-      die($e->getMessage());
-    }
+    
   }
+  
   public function actualizarCurso(){
-    try{
-    }
-    catch(Exception $e){
-      die($e->getMessage());
+  
     }
   }
+  
 
 
   
 
-?>

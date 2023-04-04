@@ -17,7 +17,7 @@ class Conexion{
   private function conectarServidor(){
     //Constructor:
     //new PDO("CADENA_CONEXION", "USER", "PASSWORD");
-    $conexion = new PDO("msql:host={$this->host};port={$this->port};dbname={$this->database};charset={$this->charset}", $this->user, $this->password);
+    $conexion = new PDO("mysql:host={$this->host};port={$this->port};dbname={$this->database};charset={$this->charset}", $this->user, $this->password);
 
     return $conexion;
   }
