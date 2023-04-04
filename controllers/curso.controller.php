@@ -42,4 +42,21 @@ if($_POST['operacion']== 'listar'){
 
 }
 
+if($_POST['operacion']== 'registrar'){
+
+  //Paso 1: recoger los datos que nos envia la vista (FORM, utilizando AJAX)
+  //$_POST : esto es lo que nos envia desde FORM
+  $datosForm = [
+    "nombrecurso"  => $_POST['nombrecurso'],
+    "especialidad" => $_POST['especialidad'],
+    "complejidad"  => $_POST['complejidad'],
+    "fechainicio"  => $_POST['fechainicio'],
+    "precio"       => $_POST['precio']
+  ];
+
+  //paso 2: enviar el arreglo como parametro del metodo registrar
+  $curso->registrarCurso($datosForm);
+
+ }
+
 }
